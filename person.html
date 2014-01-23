@@ -10,11 +10,93 @@
 		age: 43,
 		printInfo: function() {
 			this.name
+		},
+		olderThan: function(friend) {
+			if (friend.age != null) {
+				if (this.age > friend.age) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				// raise an error
+				throw "No age";
+			}
 		}
 	}
 
-	function printInfo(person) {
+	var matt = {
+		name: "Matt Stangl",
+		age: 24,
+		printInfo: function() {
+			document.writeln(this.name, " ", this.age)
+		},
+		olderThan: function(friend) {
+			if (friend.age != null) {
+				if (this.age > friend.age) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				// raise an error
+				throw "No age";
+			}
+		}
+	}
 
+	var noAge = {
+		name: "No age",
+		printInfo: function() {
+			document.writeln(this.name, " ", this.age)
+		},
+		olderThan: function(friend) {
+			if (friend.age != null) {
+				if (this.age > friend.age) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				// raise an error
+				throw "No age";
+			}
+		}
+	}
+
+	var bob = {
+		name: "Bob Smith",
+		age: 52,
+		printInfo: function() {
+			document.writeln(this.name, " ", this.age)
+		},
+		olderThan: function(friend) {
+			if (friend.age != null) {
+				if (this.age > friend.age) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				// raise an error
+				throw "No age";
+			}
+		}
+	}
+
+
+	// Test!!
+	try {
+		// Should all be valid
+		document.writeln("<p>Bob is older than matt: ", bob.olderThan(matt), "</p>");
+		document.writeln("<p>Bob is older than phil: ", bob.olderThan(phil), "</p>");
+		document.writeln("<p>phil is older than matt: ", phil.olderThan(matt), "</p>");
+		document.writeln("<p>matt is older than phil: ", matt.olderThan(phil), "</p>");
+
+		// Should be invalid
+		document.writeln("<p>matt is older than noAge: ", matt.olderThan(noAge), "</p>");
+	} catch (err) {
+		document.writeln("<h1>Error: ", err, "</h1>");
 	}
 
 	function longOperation(input) {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map!!</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+function forEach(arr, action) {
+  for (var i = 0; i < arr.length; i++) {
+    action(arr[i]);
+  }
+}
+
+function map(arr, action) {
+  var result = [];
+
+  forEach(arr, function(el) {
+    result.push(action(el));
+  });
+  return result;
+}
+
+arr = ["1","2","3","4","5"];
+
+var mapped = map(arr, function(el) {
+  return Number(el);
+});
+
+document.writeln("<p>Mapped: ", mapped, "</p>");
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input</title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+
+  var list = prompt("Enter in your grocery list separated by commas");
+
+  if (list != null) {
+    var arr = parseList(list);
+  }
+
+  forEach(arr,function(el) {
+    document.writeln("<p>", el, "</p>");
+  });
+
+  function forEach(arr, action) {
+    for (var i = 0; i < arr.length; i++) {
+      action(arr[i])
+    }
+  }
+
+  function parseList(list) {
+    var uSorted = list.split(",");
+    uSorted.sort();
+    return uSorted;
+  }
+
+</script>
+</html>

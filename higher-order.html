@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Higher-Order</title>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+
+function root(n) {
+  return function(x) {
+    return Math.pow(x,1/n);
+  };
+}
+
+document.writeln("<p>", root(2)(16), "</p>")
+document.writeln("<p>", root(3)(8), "</p>")
+document.writeln("<p>", root(3)(125), "</p>") // Yay for floating point calculations!! This should be 5, not 4.999999999999
+
+</script>
+</html>
